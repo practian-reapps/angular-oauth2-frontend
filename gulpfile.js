@@ -35,8 +35,6 @@ var config = {
     filenameCss: 'angular-oauth2-frontend.css',
     src: ['./src/scripts/*.js', './src/scripts/**/*.js'],
 
-    filenameTpls: 'angular-oauth2-frontend.tpls.js',
-    srcTpls: ['./src/scriptstpls/*.js', './src/scriptstpls/**/*.js'],
 
     srcHtml: ['./src/views/*.html', './src/views/**/*.html'],
     srcDirectives: ['./src/directives/*.htmlangular-oauth2-frontend', './src/directives/**/*.html'],
@@ -91,7 +89,6 @@ gulp.task('serve-browser-sync', function() {
     //gulp.watch(config.srcIndexHtml).on('change', reload);
 
     gulp.watch(config.src).on('change', reload);
-    gulp.watch(config.srcTpls).on('change', reload);
 
 
 });
@@ -154,44 +151,6 @@ gulp.task('js-min', ['js'], function() {
     //.pipe(reload({ stream: true }));
 });
 
-///////// Tpls
-
-gulp.task('scripts-lintTpls', function() {
-    return gulp.src(config.srcTpls)
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish'))
-        .pipe(jshint.reporter('fail'));
-});
-
-gulp.task('jsTpls', ['scripts-lintTpls'], function() {
-    console.log("jsTpls");
-    return gulp.src(config.srcTpls)
-        .pipe(concat(config.filenameTpls))
-        .pipe(uglify({
-            mangle: false,
-            output: { beautify: true },
-            compress: false
-        }))
-        .pipe(header(config.banner, { pkg: pkg }))
-        .pipe(gulp.dest(config.dest))
-        .pipe(gulp.dest(config.dest2));
-
-});
-
-gulp.task('js-minTpls', ['jsTpls'], function() {
-    console.log("js-minTpls");
-    return gulp.src(config.srcTpls)
-        .pipe(concat(config.filenameTpls))
-        .pipe(uglify({ mangle: false }))
-        .pipe(header(config.banner, { pkg: pkg }))
-        .pipe(rename(function(path) {
-            path.extname = '.min.js';
-        }))
-        .pipe(gulp.dest(config.dest))
-        .pipe(gulp.dest(config.dest2));
-    //.pipe(reload({ stream: true }));
-});
-
 
 gulp.task('html', ['directiveshtml'], function() {
     console.log("html");
@@ -221,7 +180,6 @@ gulp.task('watch', function() {
     //gulp.watch(config.images, ['images']); Tpls
     gulp.watch(config.srcCss, ['styles']);
     gulp.watch(config.src, ['js-min']);
-    gulp.watch(config.srcTpls, ['js-minTpls']);
     //gulp.watch(config.srcHtml, ['html']);
     gulp.watch(config.srcDirectives, ['directiveshtml']);
     //gulp.watch(config.srcIndexHtml, ['indexhtml']);
@@ -231,7 +189,7 @@ gulp.task('clean', function() {
     return del(config.dest)+del(config.dest2);
 });
 
-gulp.task('build', ['js-min', 'styles', 'directiveshtml', 'js-minTpls']);
+gulp.task('build', ['js-min', 'styles', 'directiveshtml']);
 //gulp.task('build', ['js-min', 'styles', 'images', 'html']);
 //gulp.task('serve', ['serve-connect', 'watch']);
 gulp.task('default', ['serve-browser-sync', 'watch']);
