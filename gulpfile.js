@@ -31,15 +31,15 @@ var jshint = require('gulp-jshint');
 
 
 var config = {
-    filename: 'angular-material-pagination.js',
-    filenameCss: 'angular-material-pagination.css',
+    filename: 'angular-oauth2-frontend.js',
+    filenameCss: 'angular-oauth2-frontend.css',
     src: ['./src/scripts/*.js', './src/scripts/**/*.js'],
 
-    filenameTpls: 'angular-material-pagination.tpls.js',
+    filenameTpls: 'angular-oauth2-frontend.tpls.js',
     srcTpls: ['./src/scriptstpls/*.js', './src/scriptstpls/**/*.js'],
 
     srcHtml: ['./src/views/*.html', './src/views/**/*.html'],
-    srcDirectives: ['./src/directives/*.html', './src/directives/**/*.html'],
+    srcDirectives: ['./src/directives/*.htmlangular-oauth2-frontend', './src/directives/**/*.html'],
 
     srcIndexHtml: ['index.html', ],
     srcCss: ['./src/content/*.css', './src/content/**/*.css'],
