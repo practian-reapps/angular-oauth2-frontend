@@ -37,7 +37,7 @@ The **latest development version** can be installed directly from github_:
 .. code-block:: bash
     
     # Universal
-    $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git
+    $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git --production --save
 
 or clone from github_:
 
@@ -174,8 +174,9 @@ Minimal setup run:
 
     });
 
-En cada router add "loginRequired": true para los router que requieran login::
+En cada router add "loginRequired": true para los router que requieran login:
 
+.. code-block:: bash
 
         "catalogo.catalogo.categorias": {
             "url": "/categorias",
@@ -186,6 +187,7 @@ En cada router add "loginRequired": true para los router que requieran login::
             "templateUrl": "app/views/categorias/index.html",
             "loginRequired": true
         }
+
 Finally, run ``gulp serve``.
 
 
