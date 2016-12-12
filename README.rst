@@ -28,6 +28,13 @@ Installation
 ============
 
 -------------------
+Dependencies
+-------------------
+
+- angular-ui-router (not part of the bundle)
+- angular (not part of the bundle)
+
+-------------------
 Development version
 -------------------
 
