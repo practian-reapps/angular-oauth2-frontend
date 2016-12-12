@@ -54,6 +54,17 @@ Add "angular-oauth2-frontend.js" to your **index.html** setting like this:
     <script src="bower_components/angular-oauth2-frontend/dist/angular-oauth2-frontend.js"></script>
 
 
+Config module:
+
+.. code-block:: js
+
+    var app = angular.module("catalogo", [
+
+    "pi.oauth2",
+
+    'ui.router',
+]);
+
 Define las constantes para Authorization Server and Resource Server  :
 
 .. code-block:: js
