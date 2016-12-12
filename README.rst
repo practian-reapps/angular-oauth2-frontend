@@ -187,6 +187,7 @@ Contributors
 -------
 
 See https://github.com/practian-reapps/django-oauth2-backend/graphs/contributors
+basado en https://github.com/manfredsteyer/angular-oidc-lib
 
 .. _github: https://github.com/practian-reapps/angular-oauth2-frontend
 .. _Django: https://www.djangoproject.com
