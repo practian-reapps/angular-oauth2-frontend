@@ -168,6 +168,7 @@ Minimal setup run:
 En cada router add ``"loginRequired": true`` para los router que requieran login:
 
 .. code-block:: javascript
+
         // js
         "catalogo.catalogo.categorias": {
             "url": "/categorias",
