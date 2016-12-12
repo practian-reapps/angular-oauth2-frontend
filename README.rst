@@ -41,7 +41,7 @@ Development version
 
 The **latest development version** can be installed directly from github_:
 
-.. code-block:: block
+.. code-block:: bash
     
     # Universal
     $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git --production --save
@@ -49,7 +49,7 @@ The **latest development version** can be installed directly from github_:
 
 Add "angular-oauth2-frontend.js" to your **index.html** setting like this:
 
-.. code-block:: bash
+.. code-block:: html
 
     <script src="bower_components/angular-oauth2-frontend/dist/angular-oauth2-frontend.js"></script>
 
