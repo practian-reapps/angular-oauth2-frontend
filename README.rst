@@ -41,7 +41,7 @@ Development version
 
 The **latest development version** can be installed directly from github_:
 
-.. code-block:: console
+.. code-block:: block
     
     # Universal
     $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git --production --save
