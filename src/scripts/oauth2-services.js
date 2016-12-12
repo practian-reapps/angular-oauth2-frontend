@@ -291,3 +291,8 @@ app.factory('oauth2InterceptorService', function($injector, $q, $location, $wind
     };
 
 });
+
+
+//revisar https://github.com/JamesRandall/AngularJS-OAuth2/blob/master/dist/angularJsOAuth2.js
+//https://github.com/manfredsteyer/AnguarJS-with-OAuth2
+//https://vimeo.com/113604459
