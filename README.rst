@@ -4,7 +4,7 @@ oauth2_frontend
 
 .. class:: no-web
 
-    Paquete collback para permitir que una aplicación **AngularJS** se autentique con un proveedor de identidad y autorización **OAuth 2** utilizando el **implicit flow (using ``grant_type='implicit'``)**. Además provee un OpenIDConnect local. El **OAuth 2** puede estar implementado en cualquier `OAuth 2 Server Libraries`_.
+    Paquete collback para permitir que una aplicación **AngularJS** se autentique con un proveedor de identidad y autorización **OAuth 2** utilizando el **implicit flow** (using ``grant_type='implicit'``). Además provee un OpenIDConnect local. El **OAuth 2** puede estar implementado en cualquier `OAuth 2 Server Libraries`_.
 
 
     .. image:: https://github.com/.. .png
@@ -170,11 +170,22 @@ Minimal setup run:
                 console.log("routers " + JSON.stringify(routers));
             }
         });
-0
+
 
     });
 
+En cada router add "loginRequired": true para los router que requieran login::
 
+
+        "catalogo.catalogo.categorias": {
+            "url": "/categorias",
+            "data": {
+                "section": "Catálogo",
+                "page": "Categorías"
+            },
+            "templateUrl": "app/views/categorias/index.html",
+            "loginRequired": true
+        }
 Finally, run ``gulp serve``.
 
 
