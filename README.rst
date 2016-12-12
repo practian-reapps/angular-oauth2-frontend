@@ -39,10 +39,8 @@ The **latest development version** can be installed directly from github_:
     # Universal
     $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git --production --save
 
-or clone from github_:
 
-
-Add "angular-oauth2-frontend.js" to your index.html setting like this:
+Add "angular-oauth2-frontend.js" to your **index.html** setting like this:
 
 .. code-block:: bash
 
@@ -87,7 +85,7 @@ Defina un contenedor para los datos del usuario actual:
 
 Minimal setup run:
 
-.. code-block:: bash
+.. code-block:: js
 
     app
     //====================================================
@@ -118,13 +116,10 @@ Minimal setup run:
             console.log("$stateChangeStart isAauthenticated=" + oauth2Service.isAauthenticated());
 
             if (toState.loginRequired && !oauth2Service.isAauthenticated()) { //si no está logeado
-                console.log('DENY');
                 event.preventDefault();
                 // transitionTo() promise will be rejected with 
                 // a 'transition prevented' error
                 var stateUrl = $state.href(toState, toParams); //obtiene la url del state
-                console.log("stateUrl=" + stateUrl);
-                console.log("window.location.hash=" + window.location.hash);
 
                 oauth2Service.createLoginUrl(stateUrl).then(function(url) {
                         $window.location = url;
@@ -173,7 +168,7 @@ Minimal setup run:
 En cada router add ``"loginRequired": true`` para los router que requieran login:
 
 .. code-block:: javascript
-
+        // js
         "catalogo.catalogo.categorias": {
             "url": "/categorias",
             "data": {
