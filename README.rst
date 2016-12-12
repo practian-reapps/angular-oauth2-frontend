@@ -58,7 +58,7 @@ Optional constant::
 
 Default interceptor:
 
-.. code-block:: bash
+.. code-block:: js
 
     app
     //==================================
@@ -71,7 +71,7 @@ Default interceptor:
 
 Defina un contenedor para los datos del usuario actual:
 
-.. code-block:: bash
+.. code-block:: js
 
 
     app
@@ -167,7 +167,7 @@ Minimal setup run:
 
 En cada router add ``"loginRequired": true`` para los router que requieran login:
 
-.. code-block:: javascript
+.. code-block:: js
 
         // js
         "catalogo.catalogo.categorias": {
