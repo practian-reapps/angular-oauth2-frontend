@@ -41,7 +41,7 @@ Development version
 
 The **latest development version** can be installed directly from github_:
 
-.. code-block:: bash
+.. code-block:: console
     
     # Universal
     $ bower install https://github.com/practian-reapps/angular-oauth2-frontend.git --production --save
@@ -54,12 +54,16 @@ Add "angular-oauth2-frontend.js" to your **index.html** setting like this:
     <script src="bower_components/angular-oauth2-frontend/dist/angular-oauth2-frontend.js"></script>
 
 
-Define las constantes para Authorization Server and Resource Server  ::
+Define las constantes para Authorization Server and Resource Server  :
+
+.. code-block:: js
 
     app.constant("authUrl", "http://localhost:7001"); // Authorization Server -> oauth2_backend
     app.constant("apiUrl", "http://localhost:8003"); // Resource Server -> catalogo
 
-Optional constant::
+Optional constant:
+
+.. code-block:: js
 
     app.constant("menuUrl", "http://localhost:7001/api/oauth2_backend/usermenu/"); // Api que trae el menu del usuario
 
