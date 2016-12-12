@@ -125,12 +125,8 @@ Minimal setup run:
                 var stateUrl = $state.href(toState, toParams); //obtiene la url del state
                 console.log("stateUrl=" + stateUrl);
                 console.log("window.location.hash=" + window.location.hash);
-                //$state.transitionTo("login", { next: stateUrl });
 
                 oauth2Service.createLoginUrl(stateUrl).then(function(url) {
-                        console.log("scope.statea=" + stateUrl);
-                        console.log("urla=" + url);
-                        //element.attr("onclick", "location.href='" + url + "'");
                         $window.location = url;
 
                     })
@@ -150,11 +146,10 @@ Minimal setup run:
 
 
         if (oauth2Service.isAauthenticated() || oauth2Service.tryLogin()) {
-            console.log(" ... || oauth2Service.tryLogin() ");
-            //$http.defaults.headers.common['Authorization'] = 'Bearer ' + oauth2Service.getAccessToken(); //no usar, no fresca al salir de la sesion
+
             if (oauth2Service.state) { // regresa a next #/url
                 console.log("oauth2Service.state=" + oauth2Service.state);
-                $location.url(oauth2Service.state.substr(1)); // führendes # abschneiden
+                $location.url(oauth2Service.state.substr(1)); 
             }
         }
 
@@ -163,7 +158,8 @@ Minimal setup run:
             if (oauth2Service.isAauthenticated() && oauth2Service.getIdentityClaims()) {
                 var userData = oauth2Service.getIdentityClaims();
                 console.log("userData=" + JSON.stringify(userData));
-                userService.userName = userData.username; // complete aqui lo otros campos
+                userService.userName = userData.username; 
+                // complete aqui lo otros campos
             }
             if (oauth2Service.getRouters()) {
                 var routers = oauth2Service.getRouters();
@@ -174,7 +170,7 @@ Minimal setup run:
 
     });
 
-En cada router add "loginRequired": true para los router que requieran login:
+En cada router add ``"loginRequired": true`` para los router que requieran login:
 
 .. code-block:: javascript
 
