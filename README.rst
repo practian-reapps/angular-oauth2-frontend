@@ -4,7 +4,7 @@ oauth2_frontend
 
 .. class:: no-web
 
-    Paquete callback para permitir que una aplicación **AngularJS** se autentique con un proveedor de identidad y autorización **OAuth 2** utilizando el **implicit flow** (using ``grant_type='implicit'``). Además provee un OpenIDConnect local. El **OAuth 2** puede estar implementado en cualquier `OAuth 2 Server Libraries`_.
+    Paquete callback para permitir que una aplicación **AngularJS** se autentique con un proveedor de identidad y autorización **OAuth 2** utilizando el **implicit flow** (using ``grant_type='implicit'``). Además provee un OpenIDConnect local. El **Authorization Server** puede estar implementado en cualquier `OAuth 2 Server Libraries`_.
 
 
     .. image:: https://github.com/.. .png
