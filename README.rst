@@ -154,7 +154,7 @@ En cada router add ``"loginRequired": true`` para los router que requieran login
 
 .. code-block:: js
 
-        // js
+        // ROUTERS constant
         "catalogo.catalogo.categorias": {
             "url": "/categorias",
             "data": {
