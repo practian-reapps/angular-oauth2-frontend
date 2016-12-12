@@ -73,7 +73,6 @@ Defina un contenedor para los datos del usuario actual:
 
 .. code-block:: js
 
-
     app
     //====================================================
     // Modelo lite para datos del usuario
@@ -86,14 +85,6 @@ Defina un contenedor para los datos del usuario actual:
 Minimal setup run:
 
 .. code-block:: js
-
-    app
-    //====================================================
-    // Modelo lite para datos del usuario
-    //====================================================
-        .service('userService', function() {
-        return { userName: null };
-    })
 
     //====================================================
     // Permite acceder a userService desde cualquier parte de la pp
@@ -120,13 +111,10 @@ Minimal setup run:
                 // transitionTo() promise will be rejected with 
                 // a 'transition prevented' error
                 var stateUrl = $state.href(toState, toParams); //obtiene la url del state
-
                 oauth2Service.createLoginUrl(stateUrl).then(function(url) {
                         $window.location = url;
-
                     })
                     .catch(function(error) {
-                        console.log("createLoginUrl error");
                         console.log(error);
                         throw error;
                     });
@@ -137,8 +125,6 @@ Minimal setup run:
                 userService.userName = null;
             }
         });
-
-
 
         if (oauth2Service.isAauthenticated() || oauth2Service.tryLogin()) {
 
@@ -161,7 +147,6 @@ Minimal setup run:
                 console.log("routers " + JSON.stringify(routers));
             }
         });
-
 
     });
 
