@@ -187,7 +187,12 @@ En cada router add ``"loginRequired": true`` para los router que requieran login
             "loginRequired": true
         }
 
-Finally, run ``gulp ``.
+Finally, run:
+
+.. code-block:: bash
+
+    #run
+    $ gulp
 
 
 
