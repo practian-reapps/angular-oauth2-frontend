@@ -150,7 +150,7 @@ app.service("oauth2Service", function($document, $window, $timeout, $q, $locatio
             this.logOut();
         }
         if (window.location.hash.indexOf("#") === 0) {
-            return this.parseQueryString(window.location.hash.substr(1));
+            return this.parseQueryString(window.location.hash.substr(3));
         } else {
             return {};
         }
